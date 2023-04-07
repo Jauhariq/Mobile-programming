@@ -1,24 +1,81 @@
-# hello_world
+# Membuat baris dan kolom
 
-A new Flutter project created with https://flutlab.io
+Buat sebuah file dengan nama baris_kolom.dart, kemudian buat tampilan seperti berikut
 
-## Getting Started
+<img src="https://telegra.ph/file/f07ba768420a36cdcff4d.jpg"/>
 
-This project is a starting point for a Flutter application.
+ya langsung ajalah 
 
-A few resources to get you started if this is your first Flutter project:
+## lib/main.dart
 
-- https://flutter.dev/docs/get-started/codelab
-- https://flutter.dev/docs/cookbook
+```dart
+import 'package:flutter/material.dart';
+import 'baris_kolom.dart';
 
-For help getting started with Flutter, view our
-https://flutter.dev/docs, which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+void main() {
+  runApp(const MyApp());
+}
 
-## Getting Started: FlutLab - Flutter Online IDE
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
-- How to use FlutLab? Please, view our https://flutlab.io/docs
-- Discover a marketplace of ready-to-use Flutter projects https://flutlab.io/widgetbay
-- Join the discussion and conversation on https://flutlab.io/residents
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: 'Klinik',
+      home: BarisKolom(),
+    );
+  }
+}
+```
+## lib/baris_kolom.dart
 
-If you have some questions regarding FlutLab, you can ask on https://flutlab.io/faq
+```dart
+import 'package:flutter/material.dart';
+
+class BarisKolom extends StatelessWidget {
+  const BarisKolom({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Baris dan Kolom"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Text("Baris 1, Kolom 1"),
+              Text("Baris 1, Kolom 2"),
+              Text("Baris 1, Kolom 3")
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Text("Baris 2, Kolom 1"),
+              Text("Baris 2, Kolom 2"),
+              Text("Baris 2, Kolom 3")
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Text("Baris 3, Kolom 1"),
+              Text("Baris 3, Kolom 2"),
+              Text("Baris 3, Kolom 3")
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+Hasilnya :
+
+<img src="https://telegra.ph/file/10cb4e6fd8d63f34daf4a.jpg"/>
