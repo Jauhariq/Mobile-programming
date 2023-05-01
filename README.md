@@ -4,7 +4,7 @@
 
 Berisi materi flutter dasar untuk dokumentasi biar kalo lupa tinggal liat ni repo :v
 
-Demo : [Link Kumpulan Tugas](https://jauhariq.github.io/Mobile-programming/)
+Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
 
 ## Daftar Isi
 <img src="https://i.pinimg.com/originals/0d/0a/ae/0d0aae238b7f6f4b89a627375bdd2eeb.gif"/></a>
