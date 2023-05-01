@@ -134,3 +134,5 @@ Buat nampilin flutter logo pake widget FlutterLogo
 ```dart
 FlutterLogo(size: 200, //atur ukuran logo),
 ```
+Hasilnya : 
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/flutterlogo.JPG"/>
