@@ -14,6 +14,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
   - [Widget Dasar](#widget-dasar)
     - [MaterialApp](#materialapp)
     - [Scaffold](#scaffold)
+    - [AppBar](#appbar)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -50,4 +51,36 @@ Semua class pada flutter bisa kita sebut sebagai widget, kalau dianalogikan jika
 ### MaterialApp
 Oke jadi MaterialApp ini merupakan widget yang paling penting, kenapa? karena widget ini berfungsi sebagai wadah kita dalam membuat tampilan aplikasi. Kalau dianalogikan, widget ini berfungsi sebagai papan kayu untuk melukis.
 ### Scaffold
-Jika widget MaterialApp merupakan papan kayu untuk melukis, maka widget Scaffolf ini bisa diumpamakan sebagai canvas untuk melukisnya.
+Jika widget MaterialApp merupakan papan kayu untuk melukis, maka widget Scaffold ini bisa diumpamakan sebagai canvas untuk melukisnya.
+### AppBar
+Buat bikin aplikasi bar atau navbar pake widget appbar taro di dalam scaffold
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.brown,
+          title: Text("Aplikasiku"),
+          centerTitle: true, //buat bikin tulisan di tengah
+        ),
+        backgroundColor: Colors.blueGrey,
+        body: Center(
+          child: Text("Hello World"),
+        ),
+      ),
+    );
+  }
+}
+```
+Hasilnya :
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/appbar.JPG"/>
