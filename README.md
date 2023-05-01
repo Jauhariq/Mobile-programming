@@ -163,3 +163,20 @@ Icon(
 ```
 Hasilnya : 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/icon.JPG"/>
+### Image
+Buat nampilin gambar
+ada 4 image provider :
+1. Assets image
+   -> gambar yang ada pada folder project
+   -> perlu di daftar atau ditambahkan di pubspec.yaml
+```dart
+Image(
+            image: AssetImage("assets/gambar1.png"),
+          ),
+```
+atau pake cara cepet
+```dart
+Image.asset("assets/gambar1.png"),
+```
+Hasilnya : 
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/image.JPG"/>
