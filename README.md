@@ -16,6 +16,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
     - [Scaffold](#scaffold)
     - [AppBar](#appbar)
     - [Container](#container)
+    - [Text](#text)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -122,3 +123,8 @@ class MyApp extends StatelessWidget {
 ```
 Hasilnya :
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/container.JPG"/>
+### Text
+Widget buat nampilin Tulisan
+```dart
+Text("Hello World"),
+```
