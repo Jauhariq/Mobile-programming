@@ -13,6 +13,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
   - [Hello World](#hello-world)
   - [Widget Dasar](#widget-dasar)
     - [MaterialApp](#materialapp)
+    - [Scaffold](#scaffold)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -48,3 +49,5 @@ hasilnya :
 Semua class pada flutter bisa kita sebut sebagai widget, kalau dianalogikan jika di meja kita sekarang ada secangkir kopi, maka secangkir kopi tersebut adalah widget. Namun, perlu diperhatikan dari secangkir kopi tersebut, bahwa itu semua terdiri dari widget cangkir, widget kopi, widget air, dan widget gula.
 ### MaterialApp
 Oke jadi MaterialApp ini merupakan widget yang paling penting, kenapa? karena widget ini berfungsi sebagai wadah kita dalam membuat tampilan aplikasi. Kalau dianalogikan, widget ini berfungsi sebagai papan kayu untuk melukis.
+### Scaffold
+Jika widget MaterialApp merupakan papan kayu untuk melukis, maka widget Scaffolf ini bisa diumpamakan sebagai canvas untuk melukisnya.
