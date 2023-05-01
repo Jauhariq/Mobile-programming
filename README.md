@@ -17,6 +17,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
     - [AppBar](#appbar)
     - [Container](#container)
     - [Text](#text)
+    - [FlutterLogo](#flutterLogo)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -127,4 +128,9 @@ Hasilnya :
 Widget buat nampilin Tulisan
 ```dart
 Text("Hello World"),
+```
+### FlutterLogo
+Buat nampilin flutter logo pake widget FlutterLogo
+```dart
+FlutterLogo(size: 200, //atur ukuran logo),
 ```
