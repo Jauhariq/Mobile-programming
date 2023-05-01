@@ -40,4 +40,4 @@ class MyApp extends StatelessWidget {
 }
 ```
 hasilnya : 
-<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/helloworld.JPG"/></a>
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/helloworld.JPG"/>
