@@ -69,13 +69,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.brown,
-          title: Text("Aplikasiku"),
-          centerTitle: true, //buat bikin tulisan di tengah
+          backgroundColor: Colors.brown, //warna appbar
+          title: Text("Aplikasiku"), //judul appbar
+          centerTitle: true, //buat bikin tulisan di tengah, ubah ke false atau hapus aja nanti defaultnya di kiri
         ),
-        backgroundColor: Colors.blueGrey,
-        body: Center(
-          child: Text("Hello World"),
+        backgroundColor: Colors.blueGrey, //warna scaffold/background layar
+        body: Center( //bikin tulisan ditengah
+          child: Text("Hello World"), //widget text buat nampilin tulisan
         ),
       ),
     );
