@@ -132,7 +132,22 @@ Text("Hello World"),
 ### FlutterLogo
 Buat nampilin flutter logo pake widget FlutterLogo
 ```dart
-FlutterLogo(size: 200, //atur ukuran logo),
+FlutterLogo(
+size: 200, //atur ukuran logo
+),
 ```
 Hasilnya : 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/flutterlogo.JPG"/>
+### ElevatedButton
+Buat bikin button
+```dart
+ElevatedButton(
+            onPressed: () {
+              //akan ngejalanin sebuah function jika di klik
+              print("di klik"); //akan tampil di debug console
+            },
+            child: Text("Klik Akuh"), //tulisan di buttonnya
+          ),
+```
+Hasilnya : 
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/elevatedbutton.JPG"/>
