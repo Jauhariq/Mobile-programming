@@ -181,3 +181,18 @@ Image.asset("assets/gambar1.png"),
 ```
 Hasilnya : 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/image.JPG"/>
+2. Network Image
+-> ambil dari internet
+-> aplikasi butuh koneksi internet
+```dart
+Image(
+image: NetworkImage("https://linknya.com"),
+        ),
+```
+atau pake cara cepet
+```dart
+Image.network("https://linknya.com"),
+```
+jarang digunakan -> pada kasus tertentu saja
+3. file image
+4. memory image
