@@ -213,3 +213,4 @@ Center(
           child: Text("Hello World"),
         ),
 ```
+Untuk hasil dari kode center atas sudah sama seperti materi [Hello World](#hello-world) di atas 
