@@ -199,3 +199,9 @@ Image.network("https://linknya.com"),
 jarang digunakan -> pada kasus tertentu saja
 3. file image
 4. memory image
+
+## Visible vs Invisible Widget
+### Visible Widget
+Jadi ini widget yang keliatan atau tampil ketika aplikasi dijalankan seperti widget AppBar , Container (Jika diberi warna), Text , FlutterLogo , ElevatedButton , Icon , Image , dll
+### Invisible Widget
+Widget yang tidak terlihat ketika aplikasi dijalankan namun widget itu ada, seperti :
