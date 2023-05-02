@@ -24,6 +24,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
   - [Visible vs Invisible Widget](#visible-vs-invisible-widget)
     - [Visible Widget](#visible-widget)
     - [Invisible Widget (Layouting Widget)](#invisible-widget)
+      - [Center](#center)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -202,6 +203,13 @@ jarang digunakan -> pada kasus tertentu saja
 
 ## Visible vs Invisible Widget
 ### Visible Widget
-Jadi ini widget yang keliatan atau tampil ketika aplikasi dijalankan seperti widget AppBar , Container (Jika diberi warna), Text , FlutterLogo , ElevatedButton , Icon , Image , dll
+Jadi ini widget yang keliatan atau tampil ketika aplikasi dijalankan seperti widget AppBar , Container (Jika diberi warna), Text , FlutterLogo , ElevatedButton , Icon , Image , dll.
 ### Invisible Widget
 Widget yang tidak terlihat ketika aplikasi dijalankan namun widget itu ada, seperti :
+### Center
+Buat bikin widget yang ada di child itu ditengah , sebagai contoh didalam child ada widget Text maka tulisan Hello World bakalan jadi ditengah.
+```dart
+Center(
+          child: Text("Hello World"),
+        ),
+```
