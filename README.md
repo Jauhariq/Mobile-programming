@@ -323,6 +323,7 @@ Hasilnya :
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/stack.JPG"/>
 ### SingleChildScrollView
 Membuat widget menjadi bisa di scroll yang sebelumnya kelebihan layar atau muatan
+Contoh pada widget Column :
 ```dart
 SingleChildScrollView(
           child: Column(
@@ -405,3 +406,86 @@ SingleChildScrollView(
 ```
 Hasilnya :
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/singlechildview.gif"/>
+
+Contoh pada widget Row :
+```dart
+SingleChildScrollView(
+          scrollDirection: Axis.horizontal, // tambah dan ubah scrolldirection menjadi horizontal
+          child: Row(
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.greenAccent,
+                child: const Center(
+                  child: Text("Kotak 1"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
+                child: const Center(
+                  child: Text("Kotak 2"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.amber,
+                child: const Center(
+                  child: Text("Kotak 3"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.greenAccent,
+                child: const Center(
+                  child: Text("Kotak 1"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
+                child: const Center(
+                  child: Text("Kotak 2"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.amber,
+                child: const Center(
+                  child: Text("Kotak 3"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.greenAccent,
+                child: const Center(
+                  child: Text("Kotak 1"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
+                child: const Center(
+                  child: Text("Kotak 2"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.amber,
+                child: const Center(
+                  child: Text("Kotak 3"),
+                ),
+              ),
+            ],
+          ),
+        ),
+```
