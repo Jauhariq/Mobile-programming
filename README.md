@@ -26,6 +26,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
     - [Invisible Widget (Layouting Widget)](#invisible-widget)
       - [Center](#center)
       - [Column](#column)
+      - [Row](#row)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -250,3 +251,36 @@ Column(
 ```
 Hasilnya : 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/column.JPG"/>
+### Row
+Untuk menyusun satu atau lebih widget secara Horizontal.
+```dart
+Row(
+          children: [
+            Container(
+              width: 150,
+              height: 150,
+              color: Colors.greenAccent,
+              child: const Center(
+                child: Text("Kotak 1"),
+              ),
+            ),
+            Container(
+              width: 150,
+              height: 150,
+              color: Colors.white,
+              child: const Center(
+                child: Text("Kotak 2"),
+              ),
+            ),
+            Container(
+              width: 150,
+              height: 150,
+              color: Colors.amber,
+              child: const Center(
+                child: Text("Kotak 3"),
+              ),
+            ),
+          ],
+        ),
+```
+Hasilnya :
