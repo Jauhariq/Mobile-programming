@@ -28,6 +28,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
       - [Column](#column)
       - [Row](#row)
       - [Stack](#stack)
+      - [SingleChildScrollView](#singlechildscrollview)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -320,3 +321,86 @@ Stack(
 ```
 Hasilnya : 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/stack.JPG"/>
+### SingleChildScrollView
+Membuat widget menjadi bisa di scroll yang sebelumnya kelebihan layar atau muatan
+```dart
+SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.greenAccent,
+                child: const Center(
+                  child: Text("Kotak 1"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
+                child: const Center(
+                  child: Text("Kotak 2"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.amber,
+                child: const Center(
+                  child: Text("Kotak 3"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.greenAccent,
+                child: const Center(
+                  child: Text("Kotak 1"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
+                child: const Center(
+                  child: Text("Kotak 2"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.amber,
+                child: const Center(
+                  child: Text("Kotak 3"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.greenAccent,
+                child: const Center(
+                  child: Text("Kotak 1"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
+                child: const Center(
+                  child: Text("Kotak 2"),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.amber,
+                child: const Center(
+                  child: Text("Kotak 3"),
+                ),
+              ),
+            ],
+          ),
+        ),
+```
+Hasilnya :
