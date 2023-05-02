@@ -27,6 +27,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
       - [Center](#center)
       - [Column](#column)
       - [Row](#row)
+      - [Stack](#stack)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -285,3 +286,36 @@ Row(
 ```
 Hasilnya :
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/row.JPG"/>
+### Stack
+Untuk menyusun satu atau lebih widget secara sumbu Z (depan - belakang) alias di tumpuk.
+```dart
+Stack(
+          children: [
+            Container(
+              width: 200,
+              height: 200,
+              color: Colors.greenAccent,
+              child: const Center(
+                child: Text("Kotak 1"),
+              ),
+            ),
+            Container(
+              width: 150,
+              height: 150,
+              color: Colors.red,
+              child: const Center(
+                child: Text("Kotak 2"),
+              ),
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.amber,
+              child: const Center(
+                child: Text("Kotak 3"),
+              ),
+            ),
+          ],
+        ),
+```
+Hasilnya : 
