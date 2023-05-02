@@ -21,6 +21,9 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
     - [ElevatedButton](#elevatedbutton)
     - [Icon](#icon)
     - [Image](#image)
+  - [Visible vs Invisible Widget](#visible-vs-invisible-widget)
+    - [Visible Widget](#visible-widget)
+    - [Invisible Widget](#invisible-widget)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
