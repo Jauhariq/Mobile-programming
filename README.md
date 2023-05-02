@@ -575,3 +575,5 @@ ListView(
           ],
         ),
 ```
+Hasilnya :
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/listview.gif"/>
