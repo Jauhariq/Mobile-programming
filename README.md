@@ -489,3 +489,5 @@ SingleChildScrollView(
           ),
         ),
 ```
+Hasilnya :
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/scrolldirection.gif"/>
