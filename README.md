@@ -136,6 +136,7 @@ Widget buat nampilin Tulisan
 ```dart
 Text("Hello World"),
 ```
+Untuk hasil dari kode widget Text sudah sama seperti materi [Hello World](#hello-world) di atas 
 ### FlutterLogo
 Buat nampilin flutter logo pake widget FlutterLogo
 ```dart
@@ -213,4 +214,4 @@ Center(
           child: Text("Hello World"),
         ),
 ```
-Untuk hasil dari kode center atas sudah sama seperti materi [Hello World](#hello-world) di atas 
+Untuk hasil dari kode widget center sudah sama seperti materi [Hello World](#hello-world) di atas 
