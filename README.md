@@ -116,3 +116,6 @@ class _PoliPageState extends State<PoliPage> {
   }
 }
 ```
+
+Hasilnya :
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/klinik_app2/assets/pertmuan6p.gif"/>
