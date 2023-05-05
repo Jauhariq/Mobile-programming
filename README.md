@@ -1,4 +1,4 @@
-# Membuat Halaman menampilkan list data dan Membuat Halaman Detail Data
+# Memisahkan Class Item dan Membuat Form Tambah
 
 <img src="https://i.ibb.co/gzXFmzb/1.png"/>
 
