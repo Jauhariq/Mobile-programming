@@ -656,6 +656,8 @@ class stateless extends StatelessWidget {
 
 Hasilnya ketika saya coba untuk klik tombol tambah ataupun kurang tidak terjadi apapun pada tampilan aplikasi, angkanya tetap 0 .
 
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/stateless.gif"/>
+
 Bagaimana cara agar data atau angka 0 bisa berubah? nah disini kita perlu menambahkan sebuah fungsi namanya setState, tapi fungsi setState tidak bisa digunakan pada Stateless. Oleh karena itu kita harus menggunakan Stateful agar fungsi setState bisa digunakan.
 
 Stateful -> tampilannya dynamic/berubah-ubah -> terjadi perubahan pada screen/layar
@@ -736,3 +738,4 @@ class _statefulState extends State<stateful> {
 
 Berikut Hasilnya :
 
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/stateful.gif"/>
