@@ -72,6 +72,7 @@ Oke jadi MaterialApp ini merupakan widget yang paling penting, kenapa? karena wi
 Jika widget MaterialApp merupakan papan kayu untuk melukis, maka widget Scaffold ini bisa diumpamakan sebagai canvas untuk melukisnya.
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/scaffold.JPG"/>
+
 ### AppBar
 Buat bikin aplikasi bar atau navbar pake widget appbar taro di dalam scaffold
 ```dart
