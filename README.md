@@ -34,7 +34,7 @@ class PoliItem extends StatelessWidget {
 }
 ```
 
-Selanjutnya bikin file poli_form.dart di ui lagi
+Selanjutnya bikin file poli_form.dart di folder ui lagi
 
 isi filenya :
 
