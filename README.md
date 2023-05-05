@@ -30,6 +30,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
       - [Stack](#stack)
       - [SingleChildScrollView](#singlechildscrollview)
       - [ListView](#listview)
+  - [Stateless vs Stateful](#stateless-vs-stateful)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -583,3 +584,155 @@ ListView(
 ```
 Hasilnya :
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/listview.gif"/>
+
+## Stateless vs Stateful
+Stateless -> tampilannya satic tidak ada perubahan data pada screen/layar
+
+Sebagai contoh disini saya sudah membuat sebuah aplikasi increment dan decrement pada suatu data.
+
+Berikut kode untuk versi menggunakan Stateless
+
+```dart
+import "package:flutter/material.dart";
+
+void main() {
+  runApp(stateless());
+}
+
+// stateless -> tampilannya satic tidak ada perubahan data pada screen/layar
+// stateful -> tampilannya dynamic/berubah-ubah -> terjadi perubahan pada screen/layar
+
+class stateless extends StatelessWidget {
+  stateless({super.key});
+
+  int nilai = 0;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Increment and Decrement Apps"),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "$nilai",
+                style: TextStyle(fontSize: 50),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      nilai--;
+                      print(nilai);
+                    },
+                    child: Icon(Icons.remove),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      nilai++;
+                      print(nilai);
+                    },
+                    child: Icon(Icons.add),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+Hasilnya ketika saya coba untuk klik tombol tambah ataupun kurang tidak terjadi apapun pada tampilan aplikasi, angkanya tetap 0 .
+
+Bagaimana cara agar data atau angka 0 bisa berubah? nah disini kita perlu menambahkan sebuah fungsi namanya setState, tapi fungsi setState tidak bisa digunakan pada Stateless. Oleh karena itu kita harus menggunakan Stateful agar fungsi setState bisa digunakan.
+
+Stateful -> tampilannya dynamic/berubah-ubah -> terjadi perubahan pada screen/layar
+
+Berikut kode untuk versi menggunakan Stateful
+
+```dart
+import "package:flutter/material.dart";
+
+void main() {
+  runApp(stateful());
+}
+
+// stateless -> tampilannya satic tidak ada perubahan data pada screen/layar
+// stateful -> tampilannya dynamic/berubah-ubah -> terjadi perubahan pada screen/layar
+
+class stateful extends StatefulWidget {
+  stateful({super.key});
+
+  @override
+  State<stateful> createState() => _statefulState();
+}
+
+class _statefulState extends State<stateful> {
+  int nilai = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Increment and Decrement Apps"),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "$nilai",
+                style: TextStyle(fontSize: 50),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      nilai--;
+                      print(nilai);
+                      setState(
+                          () {}); //fungsi untuk merefres tampilan jika ada perubahan
+                    },
+                    child: Icon(Icons.remove),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      nilai++;
+                      print(nilai);
+                      setState(
+                          () {}); //fungsi untuk merefres tampilan jika ada perubahan
+                    },
+                    child: Icon(Icons.add),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+Berikut Hasilnya :
+
