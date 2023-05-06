@@ -800,6 +800,10 @@ class homePage extends StatelessWidget {
 }
 ```
 
+Hasilnya :
+
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/dialog1.gif"/>
+
 cara kedua :
 
 ```dart
@@ -871,3 +875,7 @@ class homePage extends StatelessWidget {
   }
 }
 ```
+
+Hasilnya :
+
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/dialog2.gif"/>
