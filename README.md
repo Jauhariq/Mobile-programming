@@ -32,6 +32,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
       - [ListView](#listview)
   - [Stateless vs Stateful](#stateless-vs-stateful)
   - [Dialog](#dialog)
+  - [SnackBar](#snackbar)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -879,3 +880,79 @@ class homePage extends StatelessWidget {
 Hasilnya :
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/dialog2.gif"/>
+
+## SnackBar
+
+Bikin Notif di bawah aplikasi
+
+```dart
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: homePage(),
+    );
+  }
+}
+
+class homePage extends StatelessWidget {
+  const homePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("SnackBar"),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                //jadi snackbar itu sebuah notif yang bakalan muncul di bawah aplikasi
+                SnackBar(
+                  content: Text(
+                    "Hapus Produk Berhasil!",
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                  action: SnackBarAction(
+                    label: "Cancel",
+                    onPressed: () {
+                      print("Tidak Jadi Hapus Data");
+                    },
+                    textColor: Colors.red,
+                  ),
+                  backgroundColor: Colors.green,
+                  duration: Duration(
+                    seconds: 2,
+                  ),
+                  //kita bisa menggunakan margin tapi behaviornya harus diganti menjadi floating
+                  margin: EdgeInsets.all(20),
+                  behavior: SnackBarBehavior.floating,
+                  //shape buat bikin border radius atau melengkung kalo ga mau kotak
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                ),
+              );
+            },
+            child: Text("Hapus Produk")),
+      ),
+    );
+  }
+}
+```
+
+Hasilnya :
+
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/snackbar.gif"/>
