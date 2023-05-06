@@ -34,6 +34,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
   - [Dialog](#dialog)
   - [SnackBar](#snackbar)
   - [TextField](#textfield)
+  - [TabBar](#tabbar)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -1095,3 +1096,107 @@ class _homePageState extends State<homePage> {
 Hasilnya :
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/textfield.gif"/>
+
+## TextField
+
+Membuat tab yang ada dibawah appbar
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.teal,
+          title: Text("WhatsApp"),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.more_vert),
+            )
+          ],
+          bottom: TabBar(
+            tabs: [
+              Tab(
+                //bungkus tab biar otomatis rapih
+                icon: Icon(Icons.camera_alt),
+              ),
+              Tab(
+                text: "Chat",
+              ),
+              Tab(
+                text: "Status",
+              ),
+              Tab(
+                text: "Panggilan",
+              ),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            Center(
+              child: Text(
+                "Kamera",
+                style: TextStyle(
+                  fontSize: 50,
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                "Chat",
+                style: TextStyle(
+                  fontSize: 50,
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                "Status",
+                style: TextStyle(
+                  fontSize: 50,
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                "Panggilan",
+                style: TextStyle(
+                  fontSize: 50,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+Hasilnya :
+
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/tabbar.gif"/>
