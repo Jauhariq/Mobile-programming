@@ -33,6 +33,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
   - [Stateless vs Stateful](#stateless-vs-stateful)
   - [Dialog](#dialog)
   - [SnackBar](#snackbar)
+  - [TextField](#textfield)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -956,3 +957,141 @@ class homePage extends StatelessWidget {
 Hasilnya :
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/snackbar.gif"/>
+
+## TextField
+
+Tempat untuk user menginput teks
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: homePage(),
+    );
+  }
+}
+
+class homePage extends StatefulWidget {
+  const homePage({super.key});
+
+  @override
+  State<homePage> createState() => _homePageState();
+}
+
+class _homePageState extends State<homePage> {
+  bool isHidden = true;
+  TextEditingController emailC = TextEditingController();
+  TextEditingController passC = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Text Field"),
+          centerTitle: true,
+        ),
+        body: ListView(
+          padding: EdgeInsets.all(20),
+          children: [
+            TextField(
+              controller: emailC,
+              autocorrect:
+                  false, // jadiin true kalo pengen tulisannya dikoreksi otomatis saat typo
+              keyboardType:
+                  TextInputType.emailAddress, // buat ubah tipe keyboard
+              textInputAction:
+                  TextInputAction.next, // biar pas dienter lanjut ke password
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(
+                  // buat atur padding inputannya , hapus aja contentPadding kalo mau default
+                  horizontal: 30,
+                  vertical: 20,
+                ),
+                label: Text("Email"),
+                //atau jika inputannya string bisa lgsg pake labeltext
+                //labelText: "Email",
+                border: OutlineInputBorder(
+                  // buat ngasih border atau bikin jadi kotak
+                  borderRadius: BorderRadius.circular(
+                      50), // buat bikin kotaknya jadi melengkung , hapus atau kosongin aja OutlineInputBorder kalo ga pengen melengkung
+                ),
+                prefixIcon: Icon(Icons.email),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TextField(
+              controller: passC,
+              autocorrect:
+                  false, // jadiin true kalo pengen tulisannya dikoreksi otomatis saat typo
+              keyboardType: TextInputType.text, // buat ubah tipe keyboard
+              obscureText:
+                  isHidden, // jadiin true buat bikin inputan menjadi bintang
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(
+                  // buat atur padding inputannya , hapus aja contentPadding kalo mau default
+                  horizontal: 30,
+                  vertical: 20,
+                ),
+                label: Text("Password"),
+                //atau jika inputannya string bisa lgsg pake labeltext
+                //labelText: "Email",
+                border: OutlineInputBorder(
+                  // buat ngasih border atau bikin jadi kotak
+                  borderRadius: BorderRadius.circular(
+                      50), // buat bikin kotaknya jadi melengkung , hapus atau kosongin aja OutlineInputBorder kalo ga pengen melengkung
+                ),
+                prefixIcon: Icon(Icons.key),
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    if (isHidden == true) {
+                      isHidden = false;
+                    } else {
+                      isHidden = true;
+                    }
+                    setState(() {});
+                  },
+                  icon: Icon(Icons.remove_red_eye),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                print(
+                    "Berhasil Login dengan Email (${emailC.text}) dan Password (${passC.text})");
+              },
+              child: Text("LOGIN"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red, // atur warna
+                padding: EdgeInsets.symmetric(
+                  // buat atur padding inputannya , hapus aja padding kalo mau default
+                  horizontal: 30,
+                  vertical: 20,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+              ),
+            )
+          ],
+        ));
+  }
+}
+```
+
+Hasilnya :
+
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/textfield.gif"/>
