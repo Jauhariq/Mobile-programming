@@ -31,6 +31,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
       - [SingleChildScrollView](#singlechildscrollview)
       - [ListView](#listview)
   - [Stateless vs Stateful](#stateless-vs-stateful)
+  - [Dialog](#dialog)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -739,3 +740,134 @@ class _statefulState extends State<stateful> {
 Berikut Hasilnya :
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/stateful.gif"/>
+
+## Dialog
+
+Jadi dialog itu intinya bikin dialog atau semacam pop up atau alert
+
+ada beberapa cara untuk bikin dialog,
+
+cara pertama :
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: homePage(),
+    );
+  }
+}
+
+//pisahin materialapp dengan scaffold jika terjadi eror dengan cara mengextract widget scaffold
+class homePage extends StatelessWidget {
+  const homePage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Dialog"),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => Dialog(
+                //cara pertama yaitu pake widget dialog doang
+                child: Image.asset("assets/gambar1.png"),
+              ),
+            );
+          },
+          child: Text("Tampilkan Dialog"),
+        ),
+      ),
+    );
+  }
+}
+```
+
+cara kedua :
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: homePage(),
+    );
+  }
+}
+
+//pisahin materialapp dengan scaffold jika terjadi eror dengan cara mengextract widget scaffold
+class homePage extends StatelessWidget {
+  const homePage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Dialog"),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                // cara kedua pakai alertdialog
+                shape: RoundedRectangleBorder(
+                  // bikin border radius alias melengkung
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                title: Text("Judul Dialog"),
+                content: Text("Ini adalah deskripsi dialog"),
+                actions: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.red),
+                    ),
+                    child: Text("Batal"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text("OKE"),
+                  )
+                ],
+              ),
+            );
+          },
+          child: Text("Tampilkan Dialog"),
+        ),
+      ),
+    );
+  }
+}
+```
