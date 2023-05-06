@@ -214,8 +214,11 @@ atau pake cara cepet
 ```dart
 Image.network("https://linknya.com"),
 ```
-jarang digunakan -> pada kasus tertentu saja
+
+jarang digunakan -> pada kasus tertentu saja yaitu
+
 3. file image
+
 4. memory image
 
 ## Visible vs Invisible Widget
@@ -1097,7 +1100,7 @@ Hasilnya :
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/textfield.gif"/>
 
-## TextField
+## TabBar
 
 Membuat tab yang ada dibawah appbar
 
