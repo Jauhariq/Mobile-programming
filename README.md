@@ -35,6 +35,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
   - [SnackBar](#snackbar)
   - [TextField](#textfield)
   - [TabBar](#tabbar)
+  - [DropDown](#dropdown)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -1203,3 +1204,93 @@ class HomePage extends StatelessWidget {
 Hasilnya :
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/tabbar.gif"/>
+
+## Dropdown
+
+Buat bikin pilihan secara list
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final List data = [
+    {
+      "judul": "Pilihan ke - 1",
+      "data": 1,
+    },
+    {
+      "judul": "Pilihan ke - 2",
+      "data": 2,
+    },
+    {
+      "judul": "Pilihan ke - 3",
+      "data": 3,
+    },
+  ];
+
+  late int dataAwal;
+
+  @override
+  void initState() {
+    dataAwal = data[0]["data"]; // jadiin default awal
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Drop Down"),
+      ),
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.all(30),
+          child: DropdownButton<int>(
+            //ubah jadi DropdownButton<String> kalo pengen definisiin bahwa semua value itu String
+            value: dataAwal,
+            items: data
+                .map(
+                  //ambil semua isi yang ada pada variabel data dimasukin ke e
+                  (e) => DropdownMenuItem(
+                    child: Text("${e["judul"]}"),
+                    value: e["data"]
+                        as int, // ubah jadi "${e["data"]}" kalo datanya String
+                  ),
+                )
+                .toList(),
+            onChanged: (value) {
+              setState(() {
+                dataAwal = value!;
+              });
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+Hasilnya :
+
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/dropdown.gif"/>
