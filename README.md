@@ -39,6 +39,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
   - [BottomNavigationBar](#bottomnavigationbar)
   - [BottomSheet](#bottomsheet)
   - [Drawer](#drawer)
+  - [Navigation](#navigation)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -1659,3 +1660,149 @@ class HomePage extends StatelessWidget {
 Hasilnya :
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/drawer.gif"/>
+
+## Navigation
+
+### main.dart
+
+```dart
+import 'package:flutter/material.dart';
+
+import './pages/home.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomePage(),
+    );
+  }
+}
+```
+
+### pages/home.dart
+
+```dart
+import 'package:flutter/material.dart';
+
+import './page_dua.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Page Home"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => Page2()),
+            );
+          },
+          child: Text("Halaman Berikutnya"),
+        ),
+      ),
+    );
+  }
+}
+```
+
+### pages/page_dua.dart
+
+```dart
+import 'package:flutter/material.dart';
+
+import './page_tiga.dart';
+
+class Page2 extends StatelessWidget {
+  const Page2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        //leading: SizedBox(), // tambahin leading kalo ga mau ada tombol back
+        title: Text("Page Ke dua"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("ini halaman Ke-2"),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("Halaman Sebelumnya"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Page3()),
+                    );
+                  },
+                  child: Text("Halaman Berikutnya"),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+### pages/page_tiga.dart
+
+```dart
+import 'package:flutter/material.dart';
+
+class Page3 extends StatelessWidget {
+  const Page3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Page Ke-3"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Text("Ini Halaman Ke-3"),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Text("Halaman Sebelumnya"),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+Hasilnya :
+
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/navigation.gif"/>
