@@ -37,6 +37,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
   - [TabBar](#tabbar)
   - [DropDown](#dropdown)
   - [BottomNavigationBar](#bottomnavigationbar)
+  - [BottomSheet](#bottomsheet)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -1400,3 +1401,100 @@ class _HomePageState extends State<HomePage> {
 Hasilnya :
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/bottomnavigationbar.gif"/>
+
+## BottomSheet
+
+Bikin layar melayang di bawah
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Bottom Sheet"),
+      ),
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.all(30),
+          child: ElevatedButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  isDismissible: false, // biar belakangnya ga bisa di klik
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  builder: (context) => SizedBox(
+                    height: 300,
+                    child: ListView(
+                      children: [
+                        ListTile(
+                          onTap: () {
+                            print("Klik Photo");
+                          },
+                          leading: Icon(Icons.photo),
+                          title: Text("Photo"),
+                        ),
+                        ListTile(
+                          onTap: () {
+                            print("Klik Music");
+                          },
+                          leading: Icon(Icons.music_note_rounded),
+                          title: Text("Music"),
+                        ),
+                        ListTile(
+                          onTap: () {
+                            print("Klik Video");
+                          },
+                          leading: Icon(Icons.video_collection),
+                          title: Text("Video"),
+                        ),
+                        ListTile(
+                          onTap: () {
+                            print("Klik Share");
+                          },
+                          leading: Icon(Icons.share),
+                          title: Text("Share"),
+                        ),
+                        ListTile(
+                          onTap: () => Navigator.pop(
+                              context), // membatalkan bottom sheet layar yang muncul
+                          leading: Icon(Icons.cancel),
+                          title: Text("Cancel"),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+              child: Text("Show Bottom Sheet")),
+        ),
+      ),
+    );
+  }
+}
+```
+
+Hasilnya :
+
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/bottomsheet.gif"/>
