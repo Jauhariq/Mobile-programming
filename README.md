@@ -38,6 +38,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
   - [DropDown](#dropdown)
   - [BottomNavigationBar](#bottomnavigationbar)
   - [BottomSheet](#bottomsheet)
+  - [Drawer](#drawer)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -1498,3 +1499,163 @@ class HomePage extends StatelessWidget {
 Hasilnya :
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/bottomsheet.gif"/>
+
+## Drawer
+
+Buat bikin layar mengambang di sebelah kiri.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Drawer"),
+      ),
+      drawer: Drawer(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              alignment: Alignment.bottomLeft, // atur posisi widget text
+              padding: EdgeInsets.all(20),
+              width: double.infinity,
+              height: 100,
+              color: Colors.blue,
+              child: Text(
+                "Dashboard Menu",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                //padding: EdgeInsets.zero,
+                children: [
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print("Menu Home");
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+Hasilnya :
+
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/drawer.gif"/>
