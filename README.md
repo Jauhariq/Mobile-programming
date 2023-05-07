@@ -36,6 +36,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
   - [TextField](#textfield)
   - [TabBar](#tabbar)
   - [DropDown](#dropdown)
+  - [Bottom Navigation Bar](#bottomnavigationbar)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -1294,3 +1295,108 @@ class _HomePageState extends State<HomePage> {
 Hasilnya :
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/dropdown.gif"/>
+
+## Bottom Navigation Bar
+
+buat bikin navigasi di bawah
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late int index;
+  List showWidget = [
+    Center(
+      child: Text(
+        "Home",
+        style: TextStyle(
+          fontSize: 50,
+        ),
+      ),
+    ),
+    Center(
+      child: Text(
+        "Cart",
+        style: TextStyle(
+          fontSize: 50,
+        ),
+      ),
+    ),
+    Center(
+      child: Text(
+        "Profile",
+        style: TextStyle(
+          fontSize: 50,
+        ),
+      ),
+    ),
+  ];
+
+  @override
+  void initState() {
+    index = 0;
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Buttom Navigation Bar"),
+      ),
+      body: showWidget[index],
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue,
+        currentIndex: index, // mengatur posisi aktif navigasi
+        selectedItemColor: Colors.yellow[400],
+        unselectedItemColor: Colors.white,
+        onTap: (value) {
+          setState(() {
+            index = value;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: "Cart",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Profile",
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+Hasilnya :
+
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/bottomnavigationbar.gif"/>
