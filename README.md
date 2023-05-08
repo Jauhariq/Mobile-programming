@@ -1,4 +1,4 @@
-# Soal Latihan UI Dart
+# Soal Latihan 2 UI Dart
 
 Berisi soal latihan UI Instagram menggunakan flutter dasar untuk dokumentasi biar kalo lupa tinggal liat ni repo :v
 
