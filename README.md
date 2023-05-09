@@ -40,6 +40,7 @@ Demo : [Link](https://jauhariq.github.io/Mobile-programming/)
   - [BottomSheet](#bottomsheet)
   - [Drawer](#drawer)
   - [Navigation](#navigation)
+  - [Http Get](#http-get)
 
 ## Flutter Basic
 Flutter merupakan sebuah tools (Software Development Kit) yang digunakan untuk membuat beragam aplikasi (Website, Android Mobile, IOS Apps, dan Desktop Apps) hanya dengan satu basis pengkodean (single code base). Flutter merupakan project open-source yang diperlihara oleh Google sejak 2018, walaupun sudah ada versi alpha pada tahun 2017. Dan teknologi Flutter ini menggunakan bahasa pemograman Dart yang digunakan sebagai pengganti Javascript yang dinilai masih banyak memiliki kekurangan.
@@ -1808,3 +1809,96 @@ class Page3 extends StatelessWidget {
 Hasilnya :
 
 <img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/navigation.gif"/>
+
+## Http Get
+
+```dart
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as myhttp;
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late String id;
+  late String email;
+  late String name;
+
+  @override
+  void initState() {
+    id = "";
+    email = "";
+    name = "";
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Http Get"),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("ID : ${id}"),
+            Text("Email : ${email}"),
+            Text("Nama : ${name}"),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                var myresponse = await myhttp
+                    .get(Uri.parse("https://reqres.in/api/users/2"));
+
+                if (myresponse.statusCode == 200) {
+                  var data = json.decode(myresponse.body);
+                  print("Get Data Berhasil");
+                  setState(() {
+                    id = data["data"]["id"].toString();
+                    email = data["data"]["email"].toString();
+                    name =
+                        "${data["data"]["first_name"]} ${data["data"]["last_name"]}";
+                  });
+                } else {
+                  print("Eror ${myresponse.statusCode}");
+                }
+              },
+              child: Text("Get Data"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+Hasilnya :
+
+<img src="https://github.com/Jauhariq/Mobile-programming/raw/materi/assets/httpget.gif"/>
